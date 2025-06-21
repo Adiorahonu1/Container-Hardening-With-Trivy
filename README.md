@@ -42,6 +42,8 @@ cd flask-trivy-security-scan
 ```bash
 docker build -t flask-insecure-app .
 ```
+<img src="trivy-security-scan/0621(1).gif" alt="Azure Firewall Subnet Configuration" width="600">  
+
 ---
 ### 3. Run the Flask App
 ```bash

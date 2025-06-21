@@ -50,6 +50,8 @@ docker build -t flask-insecure-app .
 docker run -p 5050:5050 flask-insecure-app
 Visit http://localhost:5050 in your browser to verify it works.
 ```
+<img src="trivy-security-scan/Screenshot 2025-06-21 at 08.09.47.png" alt="Azure Firewall Subnet Configuration" width="600">  
+
 ---
 ## 🔍 Scan with Trivy
 Install Trivy (macOS with Homebrew)
@@ -59,14 +61,19 @@ brew install aquasecurity/trivy/trivy
 ### Run a Security Scan
 ```bash
 
-trivy image --format json --output trivy-report.json flask-insecure-app
+trivy image flask-insecure-app
 ```
+<img src="trivy-security-scan/tri.gif" alt="Azure Firewall Subnet Configuration" width="600">  
 
-### You can also output in table format:
+
+### You output in json format:
 
 ```bash
-trivy image --format table --output trivy-report.txt flask-insecure-app
+trivy image --format json --output trivy-report.json flask-insecure-app
 ```
+- [Trivy-Report.json](trivy-security-scan/trivy-report.json)
+
+
 ## 🧪 Secure Version
 To reduce vulnerabilities:
 
@@ -81,6 +88,9 @@ Pin the Flask version in Dockerfile: flask==2.2.5
 docker build -t flask-secure-app .
 trivy image flask-secure-app
 ```
+<img src="trivy-security-scan/Screenshot 2025-06-21 at 12.47.17.png" alt="Azure Firewall Subnet Configuration" width="600">  
+
+
 # 📊 Before & After: Trivy Scan Comparison
 | Image Tag |	Critical | Vulnerabilities	| Fixes Applied |
 |---------------------|----------------------|------------------------|--------------------------|
